@@ -6,6 +6,8 @@ import { CreateQuestionController } from "./controllers/create-question.controll
 import { FetchRecentQuestionsController } from "./controllers/fetch-recent-questions.controller";
 import { JwtStrategy } from "../auth/jwt.strategy";
 import { DatabaseModule } from "../database/database.module";
+import { CreateQuestionUseCase } from "@/domain/forum/application/use-cases/create-question";
+import { FetchRecentQuestionsUseCase } from "@/domain/forum/application/use-cases/fetch-recent-questions";
 
 @Module({
   imports:[
@@ -19,7 +21,9 @@ import { DatabaseModule } from "../database/database.module";
   ],
   providers: [
     PrismaService,
-    JwtStrategy
+    JwtStrategy,
+    CreateQuestionUseCase,
+    FetchRecentQuestionsUseCase
   ]
 })
 
