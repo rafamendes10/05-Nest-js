@@ -19,7 +19,7 @@ type AuthenticateStudentUseCaseResponse = Either<CredentialDoesntMatchError, {
 }>
 
 @Injectable()
-export class AuthenticateUseCase {
+export class AuthenticateStudentUseCase {
   constructor(
     private studentRepository: StudentRepository,
     private hashCompare: HashComparer,
@@ -42,7 +42,7 @@ export class AuthenticateUseCase {
       password,
       student.password)
 
-      if(isPasswordValid) {
+      if(!isPasswordValid) {
         return left(new CredentialDoesntMatchError())
       }
 

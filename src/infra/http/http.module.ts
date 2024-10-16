@@ -8,10 +8,13 @@ import { JwtStrategy } from "../auth/jwt.strategy";
 import { DatabaseModule } from "../database/database.module";
 import { CreateQuestionUseCase } from "@/domain/forum/application/use-cases/create-question";
 import { FetchRecentQuestionsUseCase } from "@/domain/forum/application/use-cases/fetch-recent-questions";
+import { AuthenticateStudentUseCase } from "@/domain/forum/application/use-cases/authenticate-student";
+import { CryptographyModule } from "../cryptography/cryptography.module";
+import { RegisterStudentUseCase } from "@/domain/forum/application/use-cases/register-student";
 
 @Module({
   imports:[
-    DatabaseModule
+    DatabaseModule, CryptographyModule
   ],
   controllers: [
     CreateAccountController,
@@ -23,7 +26,9 @@ import { FetchRecentQuestionsUseCase } from "@/domain/forum/application/use-case
     PrismaService,
     JwtStrategy,
     CreateQuestionUseCase,
-    FetchRecentQuestionsUseCase
+    FetchRecentQuestionsUseCase,
+    AuthenticateStudentUseCase,
+    RegisterStudentUseCase
   ]
 })
 
