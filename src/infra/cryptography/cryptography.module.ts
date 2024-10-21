@@ -6,7 +6,7 @@ import { Encrypter } from '@/domain/forum/application/cryptography/encrypter';
 import { JwtEncrypter } from './jwt-encrypter';
 
 
-Module({
+@Module({
   providers: [
     { provide:HashComparer, useClass: BcryptHasher},
     { provide: HashGenerator, useClass: BcryptHasher},

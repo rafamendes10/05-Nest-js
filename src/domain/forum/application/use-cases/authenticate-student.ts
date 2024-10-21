@@ -6,7 +6,7 @@ import { HashComparer } from "../cryptography/hash-comparer"
 import { Student } from '../../enterprise/entities/student';
 import { Question } from '../../enterprise/entities/question';
 import { Encrypter } from '../cryptography/encrypter';
-import { Inject, Injectable } from '@nestjs/common';
+import { Injectable } from '@nestjs/common';
 
 export interface AuthenticateStudentUseCaseRequest {
   email: string
