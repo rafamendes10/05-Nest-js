@@ -1,5 +1,6 @@
 import { PaginationParams } from '@/core/repositories/pagination-params'
 import { Question } from '@/domain/forum/enterprise/entities/question'
+import { Student } from '../../enterprise/entities/student'
 
 export abstract class QuestionsRepository {
   abstract findById(id: string): Promise<Question | null>

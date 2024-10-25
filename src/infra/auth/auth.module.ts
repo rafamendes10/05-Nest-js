@@ -19,13 +19,13 @@ import { JwtAuthGuard } from "./jwt-auth.guard";
 
         return {
           signOptions: { algorithm: 'RS256' },
-          privateKey,
-          publicKey
+          privateKey: privateKey,
+          publicKey: publicKey
         }
       }
     })
   ],
-  providers:[
+  providers: [
     JwtStrategy,
     {
       provide: APP_GUARD,

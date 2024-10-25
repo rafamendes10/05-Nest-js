@@ -26,6 +26,7 @@ export class CreateQuestionController {
 
     const { title, content } = body
     const userId = user.sub
+    
 
     const result = await this.createQuestion.execute({
         authorId: userId,
