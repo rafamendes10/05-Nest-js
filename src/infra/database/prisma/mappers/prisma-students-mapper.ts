@@ -1,3 +1,4 @@
+import { UniqueEntityID } from '@/core/entities/unique-entity-id';
 import { Student } from '@/domain/forum/enterprise/entities/student';
 import { Prisma, User as PrismaUser } from "@prisma/client";
 
@@ -8,7 +9,9 @@ export class PrismaStudentMapper {
       name: raw.name,
       email: raw.email,
       password: raw.password,
-    })
+    },
+    new UniqueEntityID(raw.id)
+  )
   }
 
 
